@@ -1,18 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+   
+  },
+
+  data () {
+    return {
+      movie: {},
+      
+    }
+  },
+
+  methods: {
+    getMovies: function () {
+      const baseURL = 'http://www.omdbapi.com/?i=tt3896198&apikey=42a545b2'
+      this.$http.get(baseURL)
+      .then(response => {
+        this.movie = response.body
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    }
   }
+
+
+
+
+  
 }
 </script>
 
