@@ -1,30 +1,28 @@
 <template>
     <div>
-        <div class="header">
-            <p>Dream Movies</p>
+        <div class="footer">
+            <p>Copyright 2020 Edidee</p>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Header'
+    name: 'Footer'
 }
 </script>
 
 <style scoped>
-    .header{
+    .footer{
         width: 100%;
         height: 50px;
         background: #93020B;
-    
     }
 
     p{
         color: #fff;
+        text-align: center;
         padding-top: 4%;
-        padding-left: 3%;
-        
     }
 
     @media screen and (min-width: 768px ) and ( max-width: 1279px){
